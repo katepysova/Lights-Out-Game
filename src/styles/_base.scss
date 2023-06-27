@@ -1,0 +1,66 @@
+@import './fonts';
+@import './variables';
+
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+  }
+}
+
+html,
+body,
+#root,
+main.main {
+  min-height: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Tilt Neon', cursive;
+  cursor: url('../images/cursors/cursor.svg'), auto;
+}
+
+img {
+  vertical-align: top;
+}
+
+svg {
+  color: inherit;
+  width: rem(24px);
+  height: rem(24px);
+}
+
+a {
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+a,
+button {
+  cursor: url('../images/cursors/cursor-pointer.svg'), pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin: 0 auto;
+}

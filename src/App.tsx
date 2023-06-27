@@ -1,8 +1,8 @@
-import Board from "@/components/Board/Board";
+import Game from "@/components/Game/Game";
 import "@/styles/main.scss";
 
 function App() {
-  return <Board />;
+  return <Game />;
 }
 
 export default App;

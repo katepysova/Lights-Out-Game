@@ -1,12 +1,17 @@
+@import 'src/styles/variables';
+
 .cell {
-  cursor: pointer;
+  cursor: url('../../images/cursors/cursor-pointer.svg'), pointer;
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin: 4px;
-  background-color: crimson;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $color-black;
+  margin: 8px;
+  transition: all 0.2s ease-out;
 
   &--is-lightning {
-    background-color: cornflowerblue;
+    background-color: $color-light-blue;
+    box-shadow: 0 4px 20px 2px $color-light-blue;
   }
 }
