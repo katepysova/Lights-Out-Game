@@ -1,21 +1,21 @@
+import "./Cell.scss";
+
 interface CellProps {
   isLightning: boolean;
   onCellClick: () => void;
 }
 
-function Cell({ onCellClick, isLightning }: CellProps) {
-  const className = isLightning ? "cell cell--is-ligtning" : "cell";
+function Cell({ onCellClick, isLightning }: CellProps): JSX.Element {
+  // const className = isLightning ? "cell cell--is-lightning" : "cell";
   return (
     <td
-      className={className}
+      className={isLightning ? "cell cell--is-lightning" : "cell"}
       role="button"
       tabIndex={0}
       onClick={onCellClick}
       onKeyDown={() => null}
       aria-label="click"
-    >
-      {isLightning ? "X" : "O"}
-    </td>
+    />
   );
 }
 

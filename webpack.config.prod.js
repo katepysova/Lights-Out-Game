@@ -47,6 +47,7 @@ module.exports = {
         test: /\.(sass|scss)$/,
         use: [
           // "style-loader" // added styles to the head of index.html
+          // https://stackoverflow.com/questions/52043727/webpack-live-hot-reload-for-sass
           MiniCssExtractPlugin.loader,
           "css-loader",
           {

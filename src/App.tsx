@@ -1,6 +1,5 @@
-import React from "react";
-import "@/styles/main.scss";
 import Board from "@/components/Board/Board";
+import "@/styles/main.scss";
 
 function App() {
   return <Board />;

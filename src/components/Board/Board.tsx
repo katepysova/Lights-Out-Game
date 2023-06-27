@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Cell from "@/components/Cell/Cell";
+import "./Board.scss";
 
 const N_ROWS = 5;
 const N_COLUMNS = 5;
@@ -53,7 +54,7 @@ function Board(): JSX.Element {
       table.push(<tr key={`${i}`}>{row}</tr>);
     }
     return (
-      <table className="Board">
+      <table className="board">
         <tbody>{table}</tbody>
       </table>
     );
