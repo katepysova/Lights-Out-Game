@@ -5,9 +5,10 @@ interface BoardProps {
   board: boolean[][];
   updateBoard: (arg: boolean[][]) => void;
   updateMoves: () => void;
+  checkWinCondition: (arg: boolean[][]) => void;
 }
 
-function Board({ board, updateBoard, updateMoves }: BoardProps): JSX.Element {
+function Board({ board, updateBoard, updateMoves, checkWinCondition }: BoardProps): JSX.Element {
   const rows = board.length;
   const cols = board[0].length;
 
@@ -28,6 +29,7 @@ function Board({ board, updateBoard, updateMoves }: BoardProps): JSX.Element {
     flipCell(i, j - 1);
     flipCell(i, j + 1);
 
+    checkWinCondition(newBoard);
     updateBoard(newBoard);
     updateMoves();
   };

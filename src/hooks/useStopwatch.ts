@@ -8,9 +8,12 @@ interface Time {
 }
 
 export const formatTime = (milliseconds: number) => {
-  const seconds = Math.floor(milliseconds / 1000);
-  const minutes = Math.floor(seconds / 60);
+  let seconds = Math.floor(milliseconds / 1000);
+  let minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
+
+  minutes %= 60;
+  seconds %= 60;
 
   return {
     milliseconds,
