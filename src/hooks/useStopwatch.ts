@@ -41,6 +41,15 @@ export const useStopwatch = () => {
     setIsRunning(false);
   };
 
+  const play = () => {
+    setIsRunning(true);
+  };
+
+  const reset = () => {
+    setIsRunning(true);
+    setTime(0);
+  };
+
   const updateTime = (newTime: number) => {
     setTime(newTime);
   };
@@ -66,5 +75,7 @@ export const useStopwatch = () => {
     updateTime,
     stop,
     pause,
+    play,
+    reset,
   };
 };

@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 .heading-primary {
   font-size: 64px;
@@ -7,10 +7,24 @@
   text-transform: capitalize;
 }
 
-.neon-text {
+.heading-secondary {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 500;
+}
+
+.neon-text-1 {
   color: $color-pink;
   margin-bottom: 84px;
   text-shadow: 0 0 7px $color-white, 0 0 10px $color-white, 0 0 21px $color-light-blue,
+    0 0 42px $color-light-blue, 0 0 82px $color-light-blue, 0 0 92px $color-light-blue,
+    0 0 102px $color-light-blue, 0 0 151px $color-light-blue;
+}
+
+.neon-text-2 {
+  color: $color-white;
+  margin-bottom: 84px;
+  text-shadow: 0 0 7px $color-light-blue, 0 0 10px $color-white, 0 0 21px $color-light-blue,
     0 0 42px $color-light-blue, 0 0 82px $color-light-blue, 0 0 92px $color-light-blue,
     0 0 102px $color-light-blue, 0 0 151px $color-light-blue;
 }

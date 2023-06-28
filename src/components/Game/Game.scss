@@ -41,27 +41,7 @@
     font-size: 24px;
   }
 
-  &__reset-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: $color-white;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 16px;
-    border: 1px solid $color-pink;
-    transition: all 0.2s;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    &:hover {
-      transform: scale(1.1) translateY(-2px);
-      background-color: rgba($color-pink, 0.8);
-      filter: drop-shadow(0 0 20px $color-pink) contrast(2) brightness(2);
-    }
-
-    &:active {
-      transform: scale(0.99) translateY(0.5px);
-      filter: drop-shadow(0 0 8px $color-pink) contrast(2) brightness(2);
-    }
+  &__win {
+    text-align: center;
   }
 }
