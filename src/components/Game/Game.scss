@@ -7,10 +7,51 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  &,
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__header {
+    background-color: rgba($color-white, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:84px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+
+  &__reset {
+    display: inline-block;
+   /// margin-left: auto;
+    background-color: transparent;
+    color: $color-white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 16px;
+    border: 1px solid $color-pink;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover {
+      transform: scale(1.1) translateY(-2px);
+      background-color: rgba($color-pink, 0.8);
+      filter: drop-shadow(0 0 20px  $color-pink) contrast(2) brightness(2);
+    }
+
+    &:active {
+      transform: scale(0.99) translateY(0.5px);;
+      filter: drop-shadow(0 0 8px  $color-pink) contrast(2) brightness(2);
+    }
+  }
 }
 
 .neon-text {
@@ -19,4 +60,17 @@
   text-shadow: 0 0 7px $color-white, 0 0 10px $color-white, 0 0 21px $color-light-blue,
     0 0 42px $color-light-blue, 0 0 82px $color-light-blue, 0 0 92px $color-light-blue,
     0 0 102px $color-light-blue, 0 0 151px $color-light-blue;
+}
+
+.header__container {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: 180px 1fr 180px;
+}
+
+.moves {
+  color: $color-light-blue;
+  font-size: 24px;
 }

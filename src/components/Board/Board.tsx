@@ -1,25 +1,15 @@
-import { useState } from "react";
 import Cell from "@/components/Cell/Cell";
 import "./Board.scss";
 
-const N_ROWS = 5;
-const N_COLUMNS = 5;
-const TRESHHOLD = 0.25;
+interface BoardProps {
+  board: boolean[][];
+  updateBoard: (arg: boolean[][]) => void;
+  updateMoves: () => void;
+}
 
-const createBoard = () => {
-  const board: boolean[][] = [];
-  for (let i = 0; i < N_ROWS; i++) {
-    const row: boolean[] = [];
-    for (let j = 0; j < N_COLUMNS; j++) {
-      row.push(Math.random() < TRESHHOLD);
-    }
-    board.push(row);
-  }
-  return board;
-};
-
-function Board(): JSX.Element {
-  const [board, setBoard] = useState(createBoard());
+function Board({ board, updateBoard, updateMoves }: BoardProps): JSX.Element {
+  const rows = board.length;
+  const cols = board[0].length;
 
   const onCellClick = (coords: string): void => {
     const [i, j] = coords.split("-").map((el) => parseInt(el, 10));
@@ -27,7 +17,7 @@ function Board(): JSX.Element {
     const newBoard: boolean[][] = JSON.parse(newBoardStr);
 
     const flipCell = (i: number, j: number) => {
-      if (i >= 0 && i < N_ROWS && j >= 0 && j < N_COLUMNS) {
+      if (i >= 0 && i < rows && j >= 0 && j < cols) {
         newBoard[i][j] = !newBoard[i][j];
       }
     };
@@ -38,14 +28,15 @@ function Board(): JSX.Element {
     flipCell(i, j - 1);
     flipCell(i, j + 1);
 
-    setBoard(newBoard);
+    updateBoard(newBoard);
+    updateMoves();
   };
 
   const drawTable = () => {
     const table = [];
-    for (let i = 0; i < N_ROWS; i++) {
+    for (let i = 0; i < rows; i++) {
       const row = [];
-      for (let j = 0; j < N_COLUMNS; j++) {
+      for (let j = 0; j < cols; j++) {
         const coords = `${i}-${j}`;
         row.push(
           <Cell key={coords} isLightning={board[i][j]} onCellClick={() => onCellClick(coords)} />
