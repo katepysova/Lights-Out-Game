@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Board from "@/components/Board/Board";
 import Stopwatch from "@/components/Stopwatch/Stopwatch";
 import Button from "@/components/Button/Button";
@@ -18,28 +18,28 @@ function Game(): JSX.Element {
 
   const { timeString, pause, reset } = useStopwatch();
 
-  const resetGame = () => {
+  const resetGame = useCallback(() => {
     setMoves(0);
     setHasWon(false);
     setBoard(createBoard(N_ROWS, N_COLUMNS, TRESHHOLD));
     reset();
-  };
+  }, []);
 
-  const updateBoard = (newBoard: boolean[][]) => {
+  const updateBoard = useCallback((newBoard: boolean[][]) => {
     setBoard(newBoard);
-  };
+  }, []);
 
-  const updateMoves = () => {
+  const updateMoves = useCallback(() => {
     setMoves((moves) => moves + 1);
-  };
+  }, []);
 
-  const checkWinCondition = (board: boolean[][]) => {
+  const checkWinCondition = useCallback((board: boolean[][]) => {
     const isEveryCellEmpty = board.every((row) => row.every((cell) => !cell));
     if (isEveryCellEmpty) {
       setHasWon(true);
       pause();
     }
-  };
+  }, []);
 
   return (
     <section className="game">

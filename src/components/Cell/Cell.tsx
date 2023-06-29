@@ -6,14 +6,14 @@ interface CellProps {
 }
 
 function Cell({ onCellClick, isLightning }: CellProps): JSX.Element {
-  // const className = isLightning ? "cell cell--is-lightning" : "cell";
+  const className = isLightning ? "cell cell--is-lightning" : "cell";
   return (
     <td
-      className={isLightning ? "cell cell--is-lightning" : "cell"}
-      // role="button"
-      // tabIndex={0}
+      className={className}
+      role="button"
+      tabIndex={0}
       onClick={onCellClick}
-      // onKeyDown={() => null}
+      onKeyDown={() => null}
       aria-label="click"
     />
   );

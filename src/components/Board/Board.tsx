@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Cell from "@/components/Cell/Cell";
 import "./Board.scss";
 
@@ -8,7 +9,12 @@ interface BoardProps {
   checkWinCondition: (arg: boolean[][]) => void;
 }
 
-function Board({ board, updateBoard, updateMoves, checkWinCondition }: BoardProps): JSX.Element {
+const Board = memo(function Board({
+  board,
+  updateBoard,
+  updateMoves,
+  checkWinCondition,
+}: BoardProps): JSX.Element {
   const rows = board.length;
   const cols = board[0].length;
 
@@ -54,6 +60,6 @@ function Board({ board, updateBoard, updateMoves, checkWinCondition }: BoardProp
   };
 
   return <div>{drawTable()}</div>;
-}
+});
 
 export default Board;

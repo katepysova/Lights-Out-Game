@@ -1,18 +1,24 @@
-import { ReactNode } from "react";
+import { ReactNode, memo } from "react";
 import "./Button.scss";
 
 type ButtonVariant = "primary" | "secondary";
 type ButtonType = "button" | "submit" | "reset";
 
 interface ButtonProps {
-  className?: "string";
+  className?: string;
   type: ButtonType;
   variant: ButtonVariant;
   handleClick: () => void;
   children: ReactNode;
 }
 
-function Button({ className, handleClick, type, variant, children }: ButtonProps): JSX.Element {
+const Button = memo(function Button({
+  className = "",
+  handleClick,
+  type,
+  variant,
+  children,
+}: ButtonProps): JSX.Element {
   const currentClass = `btn btn--${variant} ${className || ""}`;
 
   return (
@@ -20,10 +26,6 @@ function Button({ className, handleClick, type, variant, children }: ButtonProps
       {children}
     </button>
   );
-}
-
-Button.defaultProps = {
-  className: "",
-};
+});
 
 export default Button;
