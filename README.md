@@ -1,10 +1,17 @@
 # Lights Out Game
 
+Lights Out Game consists of a `5x5` grid of lights. When the game starts, a random number or a stored pattern of these lights is switched on. Pressing any of the lights will toggle it and the adjacent lights.
+
+The goal of the puzzle is to switch all the lights off, preferably with as few button presses as possible...
+
+- Read more about this game [here](<https://en.wikipedia.org/wiki/Lights_Out_(game)>).
+
+- See game demo deployed on Github Pages [here]().
+
 ## Installation
 
-1. Downloand zip:
-
-   ``
+1. Clone repo or downloand zip:
+   `git@github.com:katepysova/Lights-Out-Game.git`
 
 2. Change your current directory to this project directory.
 
