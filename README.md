@@ -6,7 +6,7 @@ The goal of the puzzle is to switch all the lights off, preferably with as few b
 
 - Read more about this game [here](<https://en.wikipedia.org/wiki/Lights_Out_(game)>).
 
-- See game demo deployed on Github Pages [here]().
+- See game demo deployed on Github Pages [here](https://katepysova.github.io/Lights-Out-Game/).
 
 ## Installation
 
