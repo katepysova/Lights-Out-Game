@@ -10,10 +10,10 @@ function Cell({ onCellClick, isLightning }: CellProps): JSX.Element {
   return (
     <td
       className={isLightning ? "cell cell--is-lightning" : "cell"}
-      role="button"
-      tabIndex={0}
+      // role="button"
+      // tabIndex={0}
       onClick={onCellClick}
-      onKeyDown={() => null}
+      // onKeyDown={() => null}
       aria-label="click"
     />
   );

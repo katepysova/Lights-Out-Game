@@ -56,7 +56,9 @@ function Game(): JSX.Element {
         <h1 className="heading-primary neon-text-1">Lights Out</h1>
         {hasWon ? (
           <div className="game__win">
-            <h2 className="heading-secondary neon-text-2">Congratulations! You have done it!</h2>
+            <h2 className="heading-secondary neon-text-2 u-margin-bottom-medium">
+              Congratulations! You have done it!
+            </h2>
             <Button type="button" handleClick={resetGame} variant="secondary">
               Play Again
             </Button>
